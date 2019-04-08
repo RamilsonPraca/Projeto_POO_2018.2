@@ -6,6 +6,7 @@
 package com.ifpb.SGC.Dao;
 
 import com.ifpb.SGC.modelo.Cerveja;
+import java.io.IOException;
 import java.util.Set;
 
 /**
@@ -13,9 +14,9 @@ import java.util.Set;
  * @author ramil
  */
 public interface CervejaDao {
-    public boolean salvar(Cerveja cerveja);
-    public boolean Deletar(int codigo);
-    public boolean editar (Cerveja cerveja);
+    public boolean salvar(Cerveja cerveja)throws IOException, ClassNotFoundException;
+    public boolean Deletar(int codigo)throws IOException, ClassNotFoundException;
+    public boolean editar (Cerveja cerveja)throws IOException, ClassNotFoundException;
     public Set<Cerveja> listarCervejas();
     public Cerveja buscarPorCodigo(int codigo);
 }

@@ -52,12 +52,12 @@ public class DependenteDaoImplem implements DependenteDao{
     }
 
     @Override
-    public Set<Dependente> listarCervejas() {
+    public Set<Dependente> listarDependentes() {
         return listaDeDependentes;
     }
 
     @Override
-    public Dependente buscarPorCodigo(String matricula) {
+    public Dependente buscarPorMatricula(String matricula) {
         for(Dependente d : listaDeDependentes){
             if (d.getMatricula() == matricula) {
                 return d;

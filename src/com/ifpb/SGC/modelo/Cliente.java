@@ -5,13 +5,14 @@
  */
 package com.ifpb.SGC.modelo;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author ramil
  */
-public class Cliente {
+public class Cliente implements Serializable{
     private String cpf;
     private String nome;
     private String endereço;
@@ -73,7 +74,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "cpf=" + cpf + ", nome=" + nome + ", endereço" + endereço + '}';
+        return "(" + "cpf = " + cpf + ", nome = " + nome + ", endereço = " + endereço + ") \n";
     }
     
     

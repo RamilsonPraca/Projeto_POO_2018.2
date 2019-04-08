@@ -52,12 +52,12 @@ public class FornecedorDaoImplem implements FornecedorDao{
     }
 
     @Override
-    public Set<FornecedorIngrediente> listarCervejas() {
+    public Set<FornecedorIngrediente> listarFornecedores() {
         return listaDefornecedor;
     }
 
     @Override
-    public FornecedorIngrediente buscarPorCodigo(String CNPJ) {
+    public FornecedorIngrediente buscarPorCNPJ(String CNPJ) {
         for(FornecedorIngrediente f : listaDefornecedor){
             if(f.getCNPJ() == CNPJ){
                 return f;

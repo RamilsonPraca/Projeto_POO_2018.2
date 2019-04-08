@@ -5,11 +5,18 @@
  */
 package com.ifpb.SGC.visão;
 
+import com.ifpb.SGC.Dao.DependenteDaoImplem;
+import com.ifpb.SGC.modelo.Dependente;
+import java.time.LocalDate;
+import java.util.Set;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ramil
  */
 public class TelaOpçõesDependente extends javax.swing.JFrame {
+    DependenteDaoImplem c2 = new DependenteDaoImplem();
 
     /**
      * Creates new form TelaOpçõesDependente
@@ -32,56 +39,70 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        cT_MatSalvarDep = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        cT_NomeSalvarDep = new javax.swing.JTextField();
+        cT_SexoSalvarDep = new javax.swing.JTextField();
+        cT_DNascSalvarDep = new javax.swing.JTextField();
+        botãoSalvarDep = new javax.swing.JButton();
+        botãoVoltarSalvarDep = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        cT_ParentSalvarDep = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        cT_MatDelDep = new javax.swing.JTextField();
+        botãoDelDep = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
+        cT_MatEditarDep = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        cT_NomeEditarDep = new javax.swing.JTextField();
+        cT_SexoEditarDep = new javax.swing.JTextField();
+        cT_DNascEditarDep = new javax.swing.JTextField();
+        botãoEditarDep = new javax.swing.JButton();
+        botãoVoltarEdiDep = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
+        cT_ParentEditarDep = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        jTextField17 = new javax.swing.JTextField();
+        cT_MatFunciEditarDep = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        cTListarDep = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        botãoListarDep = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        cTBuscarDep2 = new javax.swing.JTextArea();
+        botãoVoltarBuscarIngre = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        cTBuscarDep = new javax.swing.JTextField();
+        botãoBuscarDep = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(500, 350));
+        jTabbedPane1.setRequestFocusEnabled(false);
+
         jLabel1.setText("Codigo:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        cT_MatSalvarDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                cT_MatSalvarDepActionPerformed(evt);
             }
         });
 
@@ -91,23 +112,23 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
 
         jLabel4.setText("Data de Nascimento");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        cT_NomeSalvarDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                cT_NomeSalvarDepActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Salvar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        botãoSalvarDep.setText("Salvar");
+        botãoSalvarDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                botãoSalvarDepActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Voltar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        botãoVoltarSalvarDep.setText("Voltar");
+        botãoVoltarSalvarDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                botãoVoltarSalvarDepActionPerformed(evt);
             }
         });
 
@@ -116,17 +137,9 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
 
         jLabel13.setText("Parentesco:");
 
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        cT_ParentSalvarDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
-            }
-        });
-
-        jLabel14.setText("Mat.Funcionario");
-
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                cT_ParentSalvarDepActionPerformed(evt);
             }
         });
 
@@ -142,18 +155,14 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
                 .addGap(109, 109, 109)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cT_ParentSalvarDep, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                             .addComponent(jLabel4)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
+                            .addComponent(cT_DNascSalvarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel3)
@@ -161,13 +170,13 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
                                 .addComponent(jLabel1))
                             .addGap(23, 23, 23)
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                .addComponent(cT_SexoSalvarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                .addComponent(cT_NomeSalvarDep, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(cT_MatSalvarDep, javax.swing.GroupLayout.Alignment.TRAILING))))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jButton4)
+                        .addComponent(botãoVoltarSalvarDep)
                         .addGap(77, 77, 77)
-                        .addComponent(jButton5)))
+                        .addComponent(botãoSalvarDep)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -178,31 +187,27 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_MatSalvarDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_NomeSalvarDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_SexoSalvarDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cT_DNascSalvarDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(cT_ParentSalvarDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(botãoVoltarSalvarDep)
+                    .addComponent(botãoSalvarDep))
                 .addGap(31, 31, 31))
         );
 
@@ -210,16 +215,16 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 516, Short.MAX_VALUE)
+            .addGap(0, 495, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 10, Short.MAX_VALUE)
+                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 11, Short.MAX_VALUE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGap(0, 327, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -231,10 +236,10 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
 
         jLabel5.setText("Codigo:");
 
-        jButton2.setText("Deletar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botãoDelDep.setText("Deletar");
+        botãoDelDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botãoDelDepActionPerformed(evt);
             }
         });
 
@@ -249,13 +254,13 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(106, 106, 106)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2)
+                    .addComponent(botãoDelDep)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(cT_MatDelDep, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap(142, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -266,9 +271,9 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_MatDelDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(botãoDelDep)
                 .addContainerGap(167, Short.MAX_VALUE))
         );
 
@@ -276,7 +281,7 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 516, Short.MAX_VALUE)
+            .addGap(0, 495, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -285,7 +290,7 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGap(0, 321, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -297,9 +302,9 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
 
         jLabel15.setText("Codigo:");
 
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        cT_MatEditarDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                cT_MatEditarDepActionPerformed(evt);
             }
         });
 
@@ -309,23 +314,23 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
 
         jLabel18.setText("Data de Nascimento");
 
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        cT_NomeEditarDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                cT_NomeEditarDepActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Salvar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        botãoEditarDep.setText("Editar");
+        botãoEditarDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                botãoEditarDepActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Voltar");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        botãoVoltarEdiDep.setText("Voltar");
+        botãoVoltarEdiDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                botãoVoltarEdiDepActionPerformed(evt);
             }
         });
 
@@ -334,17 +339,17 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
 
         jLabel20.setText("Parentesco:");
 
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        cT_ParentEditarDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                cT_ParentEditarDepActionPerformed(evt);
             }
         });
 
         jLabel21.setText("Mat.Funcionario");
 
-        jTextField17.addActionListener(new java.awt.event.ActionListener() {
+        cT_MatFunciEditarDep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField17ActionPerformed(evt);
+                cT_MatFunciEditarDepActionPerformed(evt);
             }
         });
 
@@ -362,16 +367,16 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
                         .addComponent(jLabel21)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cT_MatFunciEditarDep, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cT_ParentEditarDep, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
                             .addComponent(jLabel18)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField15, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
+                            .addComponent(cT_DNascEditarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
                             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel17)
@@ -379,13 +384,13 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
                                 .addComponent(jLabel15))
                             .addGap(23, 23, 23)
                             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField14, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                .addComponent(cT_SexoEditarDep, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                .addComponent(cT_NomeEditarDep, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(cT_MatEditarDep, javax.swing.GroupLayout.Alignment.TRAILING))))
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jButton7)
+                        .addComponent(botãoVoltarEdiDep)
                         .addGap(74, 74, 74)
-                        .addComponent(jButton6)))
+                        .addComponent(botãoEditarDep)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
@@ -396,31 +401,31 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel15)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_MatEditarDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel16)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_NomeEditarDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_SexoEditarDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cT_DNascEditarDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_ParentEditarDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_MatFunciEditarDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton6))
+                    .addComponent(botãoVoltarEdiDep)
+                    .addComponent(botãoEditarDep))
                 .addGap(31, 31, 31))
         );
 
@@ -489,28 +494,155 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Editar", jPanel3);
 
+        cTListarDep.setColumns(20);
+        cTListarDep.setRows(5);
+        jScrollPane1.setViewportView(cTListarDep);
+
+        jLabel6.setFont(new java.awt.Font("Bookman Old Style", 0, 20)); // NOI18N
+        jLabel6.setText("Listar Dependentes");
+
+        botãoListarDep.setText("Listar");
+        botãoListarDep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botãoListarDepActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(botãoListarDep)))
+                .addContainerGap(153, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel6)
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botãoListarDep)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 516, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGap(0, 321, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Listar", jPanel4);
+
+        jLabel7.setFont(new java.awt.Font("Bookman Old Style", 0, 20)); // NOI18N
+        jLabel7.setText("Buscar Dependente");
+
+        cTBuscarDep2.setColumns(20);
+        cTBuscarDep2.setRows(5);
+        jScrollPane2.setViewportView(cTBuscarDep2);
+
+        botãoVoltarBuscarIngre.setText("Voltar");
+
+        jLabel8.setText("Matricula:");
+
+        cTBuscarDep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cTBuscarDepActionPerformed(evt);
+            }
+        });
+
+        botãoBuscarDep.setText("Buscar");
+        botãoBuscarDep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botãoBuscarDepActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botãoVoltarBuscarIngre)
+                            .addGroup(jPanel12Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cTBuscarDep, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(26, 26, 26)
+                        .addComponent(botãoBuscarDep))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(106, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(143, 143, 143))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel7)
+                .addGap(45, 45, 45)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(cTBuscarDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botãoBuscarDep))
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(botãoVoltarBuscarIngre)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 516, Short.MAX_VALUE)
+            .addGap(0, 497, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGap(0, 321, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Buscar", jPanel5);
@@ -519,68 +651,103 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void cT_MatSalvarDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_MatSalvarDepActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_cT_MatSalvarDepActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void cT_NomeSalvarDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_NomeSalvarDepActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_cT_NomeSalvarDepActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void botãoSalvarDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoSalvarDepActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        
+        Dependente c1 = new Dependente(cT_MatSalvarDep.getText(), cT_NomeSalvarDep.getText(), cT_SexoSalvarDep.getText(),
+                cT_DNascSalvarDep.getText(), cT_ParentSalvarDep.getText());
+        c2.salvar(c1);
+        JOptionPane.showMessageDialog(rootPane, "Salvo Com sucesso");
+        cT_MatSalvarDep.setText("");
+        cT_NomeSalvarDep.setText("");
+        cT_SexoSalvarDep.setText("");
+        cT_DNascSalvarDep.setText("");
+        cT_ParentSalvarDep.setText("");
+    }//GEN-LAST:event_botãoSalvarDepActionPerformed
+
+    private void botãoVoltarSalvarDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoVoltarSalvarDepActionPerformed
         this.dispose();
         new TelaPrincipal().setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_botãoVoltarSalvarDepActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void botãoDelDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoDelDepActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+        c2.Deletar(cT_MatDelDep.getText());
+        JOptionPane.showMessageDialog(rootPane, "Deletado com Sucesso");
+        cT_MatDelDep.setText("");
+    }//GEN-LAST:event_botãoDelDepActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void cT_ParentSalvarDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_ParentSalvarDepActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_cT_ParentSalvarDepActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void cT_MatEditarDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_MatEditarDepActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_cT_MatEditarDepActionPerformed
 
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
+    private void cT_NomeEditarDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_NomeEditarDepActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
+    }//GEN-LAST:event_cT_NomeEditarDepActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void botãoEditarDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoEditarDepActionPerformed
+        
+        Dependente c1 = new Dependente(cT_MatEditarDep.getText(), cT_NomeEditarDep.getText(), cT_SexoEditarDep.getText(),
+                cT_DNascEditarDep.getText(), cT_ParentEditarDep.getText());
+        c2.salvar(c1);
+        JOptionPane.showMessageDialog(rootPane, "Editado Com sucesso");
+        cT_MatEditarDep.setText("");
+        cT_NomeEditarDep.setText("");
+        cT_SexoEditarDep.setText("");
+        cT_DNascEditarDep.setText("");
+        cT_ParentEditarDep.setText("");
+    }//GEN-LAST:event_botãoEditarDepActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void botãoVoltarEdiDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoVoltarEdiDepActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_botãoVoltarEdiDepActionPerformed
 
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+    private void cT_ParentEditarDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_ParentEditarDepActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
+    }//GEN-LAST:event_cT_ParentEditarDepActionPerformed
 
-    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
+    private void cT_MatFunciEditarDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_MatFunciEditarDepActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField17ActionPerformed
+    }//GEN-LAST:event_cT_MatFunciEditarDepActionPerformed
+
+    private void botãoListarDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoListarDepActionPerformed
+
+        Set<Dependente> result = c2.listarDependentes();
+        cTListarDep.setText(result.toString());
+    }//GEN-LAST:event_botãoListarDepActionPerformed
+
+    private void cTBuscarDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTBuscarDepActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cTBuscarDepActionPerformed
+
+    private void botãoBuscarDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoBuscarDepActionPerformed
+
+        Dependente result = c2.buscarPorMatricula(cTBuscarDep.getText());
+        cTBuscarDep2.setText(result.toString());
+        cTBuscarDep.setText("");
+    }//GEN-LAST:event_botãoBuscarDepActionPerformed
 
     /**
      * @param args the command line arguments
@@ -618,16 +785,33 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton botãoBuscarDep;
+    private javax.swing.JButton botãoDelDep;
+    private javax.swing.JButton botãoEditarDep;
+    private javax.swing.JButton botãoListarDep;
+    private javax.swing.JButton botãoSalvarDep;
+    private javax.swing.JButton botãoVoltarBuscarIngre;
+    private javax.swing.JButton botãoVoltarEdiDep;
+    private javax.swing.JButton botãoVoltarSalvarDep;
+    private javax.swing.JTextField cTBuscarDep;
+    private javax.swing.JTextArea cTBuscarDep2;
+    private javax.swing.JTextArea cTListarDep;
+    private javax.swing.JTextField cT_DNascEditarDep;
+    private javax.swing.JTextField cT_DNascSalvarDep;
+    private javax.swing.JTextField cT_MatDelDep;
+    private javax.swing.JTextField cT_MatEditarDep;
+    private javax.swing.JTextField cT_MatFunciEditarDep;
+    private javax.swing.JTextField cT_MatSalvarDep;
+    private javax.swing.JTextField cT_NomeEditarDep;
+    private javax.swing.JTextField cT_NomeSalvarDep;
+    private javax.swing.JTextField cT_ParentEditarDep;
+    private javax.swing.JTextField cT_ParentSalvarDep;
+    private javax.swing.JTextField cT_SexoEditarDep;
+    private javax.swing.JTextField cT_SexoSalvarDep;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -639,8 +823,13 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -649,19 +838,8 @@ public class TelaOpçõesDependente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

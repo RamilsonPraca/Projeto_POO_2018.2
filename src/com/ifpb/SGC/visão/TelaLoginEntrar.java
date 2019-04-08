@@ -151,7 +151,9 @@ public class TelaLoginEntrar extends javax.swing.JFrame {
             this.dispose();
             new TelaPrincipal().setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(rootPane, "Login ou senha Incorreto");
+            JOptionPane.showMessageDialog(rootPane, "Acesso Negado");
+            cTextoLogin.setText("");
+            cTextoSenha.setText("");
         }
     }//GEN-LAST:event_botaoEntrarActionPerformed
 
@@ -159,8 +161,12 @@ public class TelaLoginEntrar extends javax.swing.JFrame {
             Login login = new Login(cTextoLogin.getText(), cTextoSenha.getText());
             if (dao.salvar(login)) {      
                 JOptionPane.showMessageDialog(rootPane, "Salvo Com Sucesso");
+                cTextoLogin.setText("");
+                cTextoSenha.setText("");
             }else{
                 JOptionPane.showMessageDialog(rootPane, "Não foi possivel Salvar");
+                cTextoLogin.setText("");
+                cTextoSenha.setText("");
             }
     }//GEN-LAST:event_jButton1ActionPerformed
 

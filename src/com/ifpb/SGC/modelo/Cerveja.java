@@ -5,26 +5,28 @@
  */
 package com.ifpb.SGC.modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
  * @author ramil
  */
-public class Cerveja {
+public class Cerveja implements Serializable{
     private int codigo;
-    private float preço;
     private String nome;
+    private float preço;
     private String descrição;
    
 
-    public Cerveja(int codigo, float preço, String nome, String descrição) {
+    public Cerveja(int codigo, String nome, float preço, String descrição) {
         this.codigo = codigo;
-        this.preço = preço;
         this.nome = nome;
+        this.preço = preço;
         this.descrição = descrição;
-        
     }
 
     public int getCodigo() {
@@ -58,8 +60,8 @@ public class Cerveja {
     public void setDescrição(String descrição) {
         this.descrição = descrição;
     }
-
-
+    
+    
     @Override
     public int hashCode() {
         int hash = 3;
@@ -87,7 +89,7 @@ public class Cerveja {
 
     @Override
     public String toString() {
-        return "Cerveja{" + "codigo = " + codigo + ", preço = " + preço + ", nome = " + nome + ", descrição = " + descrição + '}';
+        return "Cerveja(" + "codigo = " + codigo + ", preço = " + preço + ", nome = " + nome + ", descrição = " + descrição + ") \n";
     }
     
     

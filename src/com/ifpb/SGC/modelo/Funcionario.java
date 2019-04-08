@@ -5,6 +5,7 @@
  */
 package com.ifpb.SGC.modelo;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,17 +15,16 @@ import java.util.Objects;
  *
  * @author ramil
  */
-public class Funcionario {
+public class Funcionario implements Serializable{
     private String matricula;
     private String nome;
     private String endereço;
-    private LocalDate dataNascimento;
-    private LocalDate dataAdmissão;
+    private String dataNascimento;
+    private String dataAdmissão;
     private String sexo;
     private float salario;
-    private List<Dependente> listaDependentes;
 
-    public Funcionario(String matricula, String nome, String endereço, String sexo, float salario) {
+    public Funcionario(String matricula, String nome, String endereço, String dataNascimento, String dataAdmissão, String sexo, float salario) {
         this.matricula = matricula;
         this.nome = nome;
         this.endereço = endereço;
@@ -32,7 +32,6 @@ public class Funcionario {
         this.dataAdmissão = dataAdmissão;
         this.sexo = sexo;
         this.salario = salario;
-        this.listaDependentes = new ArrayList<>();
     }
 
     public String getMatricula() {
@@ -59,19 +58,19 @@ public class Funcionario {
         this.endereço = endereço;
     }
 
-    public LocalDate getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
-    public LocalDate getDataAdmissão() {
+    public String getDataAdmissão() {
         return dataAdmissão;
     }
 
-    public void setDataAdmissão(LocalDate dataAdmissão) {
+    public void setDataAdmissão(String dataAdmissão) {
         this.dataAdmissão = dataAdmissão;
     }
 
@@ -91,13 +90,6 @@ public class Funcionario {
         this.salario = salario;
     }
 
-    public List<Dependente> getListaDependentes() {
-        return listaDependentes;
-    }
-
-    public void setListaDependentes(List<Dependente> listaDependentes) {
-        this.listaDependentes = listaDependentes;
-    }
 
     @Override
     public int hashCode() {
@@ -128,7 +120,8 @@ public class Funcionario {
 
     @Override
     public String toString() {
-        return "Funcionario{" + "matricula=" + matricula + ", nome=" + nome + ", endere\u00e7o=" + endereço + ", dataNascimento=" + dataNascimento + ", dataAdmiss\u00e3o=" + dataAdmissão + ", sexo=" + sexo + ", salario=" + salario + ", listaDependentes=" + listaDependentes + '}';
+        return "(" + "matricula = " + matricula + ", nome = " + nome + ", endereço = " + endereço + ", data de nascimento = " + 
+                dataNascimento + ", dataAdmissão = " + dataAdmissão + ", sexo = " + sexo + ", salario = " + salario + ") \n ";
     }
 
     

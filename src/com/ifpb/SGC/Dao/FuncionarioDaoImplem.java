@@ -53,12 +53,12 @@ public class FuncionarioDaoImplem implements FuncionarioDao{
     }
 
     @Override
-    public Set<Funcionario> listarCervejas() {
+    public Set<Funcionario> listarFuncionarios() {
         return listaDeFuncionario;
     }
 
     @Override
-    public Funcionario buscarPorCodigo(String matricula) {
+    public Funcionario buscarPorMatricula(String matricula) {
         for(Funcionario f : listaDeFuncionario){
             if(f.getMatricula() == matricula){
                 return f;

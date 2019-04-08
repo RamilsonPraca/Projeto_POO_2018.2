@@ -16,6 +16,6 @@ public interface IngredienteDao {
     public boolean salvar(Ingrediente ingrediente);
     public boolean Deletar(int codigo);
     public boolean editar (Ingrediente ingrediente);
-    public Set<Ingrediente> listarCervejas();
+    public Set<Ingrediente> listarIngredientes();
     public Ingrediente buscarPorCodigo(int codigo);
 }

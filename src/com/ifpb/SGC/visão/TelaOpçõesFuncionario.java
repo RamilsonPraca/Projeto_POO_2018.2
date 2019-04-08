@@ -5,11 +5,17 @@
  */
 package com.ifpb.SGC.visão;
 
+import com.ifpb.SGC.Dao.FuncionarioDaoImplem;
+import com.ifpb.SGC.modelo.Funcionario;
+import java.util.Set;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ramil
  */
 public class TelaOpçõesFuncionario extends javax.swing.JFrame {
+    FuncionarioDaoImplem c2 = new FuncionarioDaoImplem();
 
     /**
      * Creates new form TelaOpçõesFuncionario
@@ -33,50 +39,63 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        cT_MatSalvarFunci = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        cT_NomeSalvarFunci = new javax.swing.JTextField();
+        cT_EndereçoSalvarFunci = new javax.swing.JTextField();
+        botãoSalvarFunci = new javax.swing.JButton();
+        botãoVoltarSalvarFunci = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        cTSexoSalvar = new javax.swing.JTextField();
+        cT_SalarioSalvarFunci = new javax.swing.JTextField();
+        cT_DNascSalvarFunci = new javax.swing.JFormattedTextField();
+        cT_DAdmisSalvarFunci = new javax.swing.JFormattedTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
+        cT_MatDelFunci = new javax.swing.JTextField();
+        botãoDelFunci = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
-        jTextField21 = new javax.swing.JTextField();
+        cT_MatEditarFunci = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField23 = new javax.swing.JTextField();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        cT_NomeEditarFunci = new javax.swing.JTextField();
+        cT_EndereçoEditarFunci = new javax.swing.JTextField();
+        botãoEditarFunci = new javax.swing.JButton();
+        botãoVoltarFunci = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
-        jTextField24 = new javax.swing.JTextField();
-        jTextField25 = new javax.swing.JTextField();
-        jFormattedTextField7 = new javax.swing.JFormattedTextField();
-        jFormattedTextField8 = new javax.swing.JFormattedTextField();
+        cTSexoEditar = new javax.swing.JTextField();
+        cT_SalarioEditarFunci = new javax.swing.JTextField();
+        cT_DNascEditarFunci = new javax.swing.JFormattedTextField();
+        cT_DAdmisEditarFunci = new javax.swing.JFormattedTextField();
         jPanel4 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        cTListarFunci = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        botãoListarFunci = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        cTBuscarFunci2 = new javax.swing.JTextArea();
+        botãoVoltarBuscarIngre = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        cTBuscarFunci = new javax.swing.JTextField();
+        botãoBuscarFunci = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -92,37 +111,39 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(500, 350));
+
         jLabel1.setText("Matricula:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        cT_MatSalvarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                cT_MatSalvarFunciActionPerformed(evt);
             }
         });
 
         jLabel2.setText("Nome:");
 
-        jLabel3.setText("Preço:");
+        jLabel3.setText("Endereço:");
 
         jLabel4.setText("Data de Nascimemento:");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        cT_NomeSalvarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                cT_NomeSalvarFunciActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Salvar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        botãoSalvarFunci.setText("Salvar");
+        botãoSalvarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                botãoSalvarFunciActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Voltar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        botãoVoltarSalvarFunci.setText("Voltar");
+        botãoVoltarSalvarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                botãoVoltarSalvarFunciActionPerformed(evt);
             }
         });
 
@@ -136,27 +157,27 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
 
         jLabel15.setText("Salario:");
 
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        cTSexoSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                cTSexoSalvarActionPerformed(evt);
             }
         });
 
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        cT_SalarioSalvarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                cT_SalarioSalvarFunciActionPerformed(evt);
             }
         });
 
-        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+        cT_DNascSalvarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField1ActionPerformed(evt);
+                cT_DNascSalvarFunciActionPerformed(evt);
             }
         });
 
-        jFormattedTextField2.addActionListener(new java.awt.event.ActionListener() {
+        cT_DAdmisSalvarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField2ActionPerformed(evt);
+                cT_DAdmisSalvarFunciActionPerformed(evt);
             }
         });
 
@@ -174,17 +195,17 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(cT_EndereçoSalvarFunci, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(cT_NomeSalvarFunci, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cT_MatSalvarFunci, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel7Layout.createSequentialGroup()
                             .addComponent(jLabel4)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(cT_DAdmisSalvarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cT_DNascSalvarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
                             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel14)
@@ -192,11 +213,11 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
                             .addGap(27, 27, 27)
                             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(jPanel7Layout.createSequentialGroup()
-                                    .addComponent(jButton4)
+                                    .addComponent(botãoVoltarSalvarFunci)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                                    .addComponent(jButton5))
-                                .addComponent(jTextField11)
-                                .addComponent(jTextField12))))
+                                    .addComponent(botãoSalvarFunci))
+                                .addComponent(cTSexoSalvar)
+                                .addComponent(cT_SalarioSalvarFunci))))
                     .addComponent(jLabel10))
                 .addContainerGap(175, Short.MAX_VALUE))
         );
@@ -207,36 +228,36 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cT_MatSalvarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cT_NomeSalvarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_EndereçoSalvarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_DNascSalvarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_DAdmisSalvarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cTSexoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_SalarioSalvarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4))
+                    .addComponent(botãoSalvarFunci)
+                    .addComponent(botãoVoltarSalvarFunci))
                 .addContainerGap())
         );
 
@@ -253,7 +274,7 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 345, Short.MAX_VALUE)
+            .addGap(0, 337, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -265,10 +286,10 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
 
         jLabel5.setText("Matricula:");
 
-        jButton6.setText("Deletar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        botãoDelFunci.setText("Deletar");
+        botãoDelFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                botãoDelFunciActionPerformed(evt);
             }
         });
 
@@ -283,13 +304,13 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(106, 106, 106)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton6)
+                    .addComponent(botãoDelFunci)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(cT_MatDelFunci, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap(142, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -300,9 +321,9 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_MatDelFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton6)
+                .addComponent(botãoDelFunci)
                 .addContainerGap(167, Short.MAX_VALUE))
         );
 
@@ -319,7 +340,7 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 345, Short.MAX_VALUE)
+            .addGap(0, 322, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -331,35 +352,35 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
 
         jLabel32.setText("Matricula:");
 
-        jTextField21.addActionListener(new java.awt.event.ActionListener() {
+        cT_MatEditarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField21ActionPerformed(evt);
+                cT_MatEditarFunciActionPerformed(evt);
             }
         });
 
         jLabel33.setText("Nome:");
 
-        jLabel34.setText("Preço:");
+        jLabel34.setText("Endereço:");
 
         jLabel35.setText("Data de Nascimemento:");
 
-        jTextField22.addActionListener(new java.awt.event.ActionListener() {
+        cT_NomeEditarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField22ActionPerformed(evt);
+                cT_NomeEditarFunciActionPerformed(evt);
             }
         });
 
-        jButton11.setText("Salvar");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        botãoEditarFunci.setText("Editar");
+        botãoEditarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                botãoEditarFunciActionPerformed(evt);
             }
         });
 
-        jButton12.setText("Voltar");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        botãoVoltarFunci.setText("Voltar");
+        botãoVoltarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                botãoVoltarFunciActionPerformed(evt);
             }
         });
 
@@ -373,27 +394,27 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
 
         jLabel39.setText("Salario:");
 
-        jTextField24.addActionListener(new java.awt.event.ActionListener() {
+        cTSexoEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField24ActionPerformed(evt);
+                cTSexoEditarActionPerformed(evt);
             }
         });
 
-        jTextField25.addActionListener(new java.awt.event.ActionListener() {
+        cT_SalarioEditarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField25ActionPerformed(evt);
+                cT_SalarioEditarFunciActionPerformed(evt);
             }
         });
 
-        jFormattedTextField7.addActionListener(new java.awt.event.ActionListener() {
+        cT_DNascEditarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField7ActionPerformed(evt);
+                cT_DNascEditarFunciActionPerformed(evt);
             }
         });
 
-        jFormattedTextField8.addActionListener(new java.awt.event.ActionListener() {
+        cT_DAdmisEditarFunci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField8ActionPerformed(evt);
+                cT_DAdmisEditarFunciActionPerformed(evt);
             }
         });
 
@@ -411,17 +432,17 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
                             .addComponent(jLabel34))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField23, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(jTextField22, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField21, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(cT_EndereçoEditarFunci, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(cT_NomeEditarFunci, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cT_MatEditarFunci, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel12Layout.createSequentialGroup()
                             .addComponent(jLabel35)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jFormattedTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jFormattedTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(cT_DAdmisEditarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cT_DNascEditarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel12Layout.createSequentialGroup()
                             .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel38)
@@ -429,11 +450,11 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
                             .addGap(27, 27, 27)
                             .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(jPanel12Layout.createSequentialGroup()
-                                    .addComponent(jButton12)
+                                    .addComponent(botãoVoltarFunci)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                                    .addComponent(jButton11))
-                                .addComponent(jTextField24)
-                                .addComponent(jTextField25))))
+                                    .addComponent(botãoEditarFunci))
+                                .addComponent(cTSexoEditar)
+                                .addComponent(cT_SalarioEditarFunci))))
                     .addComponent(jLabel37))
                 .addContainerGap(175, Short.MAX_VALUE))
         );
@@ -444,36 +465,36 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
                 .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cT_MatEditarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel32))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cT_NomeEditarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel33))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34)
-                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_EndereçoEditarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel35)
-                    .addComponent(jFormattedTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_DNascEditarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
-                    .addComponent(jFormattedTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_DAdmisEditarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
-                    .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cTSexoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39)
-                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_SalarioEditarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton11)
-                    .addComponent(jButton12))
+                    .addComponent(botãoEditarFunci)
+                    .addComponent(botãoVoltarFunci))
                 .addContainerGap())
         );
 
@@ -490,7 +511,7 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 345, Short.MAX_VALUE)
+            .addGap(0, 337, Short.MAX_VALUE)
             .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel9Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -508,35 +529,161 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 345, Short.MAX_VALUE)
+            .addGap(0, 337, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Editar", jPanel3);
 
+        cTListarFunci.setColumns(20);
+        cTListarFunci.setRows(5);
+        jScrollPane1.setViewportView(cTListarFunci);
+
+        jLabel6.setFont(new java.awt.Font("Bookman Old Style", 0, 20)); // NOI18N
+        jLabel6.setText("Listar Funcionarios");
+
+        botãoListarFunci.setText("Listar");
+        botãoListarFunci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botãoListarFunciActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(botãoListarFunci)))
+                .addContainerGap(153, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel6)
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botãoListarFunci)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 495, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 345, Short.MAX_VALUE)
+            .addGap(0, 343, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Listar", jPanel4);
+
+        jLabel7.setFont(new java.awt.Font("Bookman Old Style", 0, 20)); // NOI18N
+        jLabel7.setText("Buscar Funcionarios");
+
+        cTBuscarFunci2.setColumns(20);
+        cTBuscarFunci2.setRows(5);
+        jScrollPane2.setViewportView(cTBuscarFunci2);
+
+        botãoVoltarBuscarIngre.setText("Voltar");
+
+        jLabel8.setText("Matricula:");
+
+        cTBuscarFunci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cTBuscarFunciActionPerformed(evt);
+            }
+        });
+
+        botãoBuscarFunci.setText("Buscar");
+        botãoBuscarFunci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botãoBuscarFunciActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botãoVoltarBuscarIngre)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cTBuscarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(26, 26, 26)
+                        .addComponent(botãoBuscarFunci))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(106, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(143, 143, 143))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel7)
+                .addGap(45, 45, 45)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(cTBuscarFunci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botãoBuscarFunci))
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(botãoVoltarBuscarIngre)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 495, Short.MAX_VALUE)
+            .addGap(0, 497, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 345, Short.MAX_VALUE)
+            .addGap(0, 322, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Buscar", jPanel6);
@@ -545,84 +692,129 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void cT_MatSalvarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_MatSalvarFunciActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_cT_MatSalvarFunciActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void cT_NomeSalvarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_NomeSalvarFunciActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_cT_NomeSalvarFunciActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void botãoSalvarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoSalvarFunciActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        float salario = Float.parseFloat(cT_SalarioSalvarFunci.getText());
+        
+        Funcionario c1 = new Funcionario(cT_MatSalvarFunci.getText(), cT_NomeSalvarFunci.getText(), cT_EndereçoSalvarFunci.getText(), cT_DNascSalvarFunci.getText(),
+            cT_DAdmisSalvarFunci.getText(), cTSexoSalvar.getText(), salario);
+        c2.salvar(c1);
+        JOptionPane.showMessageDialog(rootPane, "Salvo Com sucesso");
+        cT_MatSalvarFunci.setText("");
+        cT_NomeSalvarFunci.setText("");
+        cT_EndereçoSalvarFunci.setText("");
+        cT_DNascSalvarFunci.setText("");
+        cT_DAdmisSalvarFunci.setText("");
+        cTSexoSalvar.setText("");
+        cT_SalarioSalvarFunci.setText("");
+    }//GEN-LAST:event_botãoSalvarFunciActionPerformed
+
+    private void botãoVoltarSalvarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoVoltarSalvarFunciActionPerformed
         this.dispose();
         new TelaPrincipal().setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_botãoVoltarSalvarFunciActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void botãoDelFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoDelFunciActionPerformed
+       float salario = Float.parseFloat(cT_SalarioEditarFunci.getText());
+        JOptionPane.showMessageDialog(rootPane, "Deletado com Sucesso");
+        cT_MatDelFunci.setText("");
+    }//GEN-LAST:event_botãoDelFunciActionPerformed
 
-    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+    private void cT_DNascSalvarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_DNascSalvarFunciActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
+    }//GEN-LAST:event_cT_DNascSalvarFunciActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void cT_SalarioSalvarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_SalarioSalvarFunciActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_cT_SalarioSalvarFunciActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void cTSexoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTSexoSalvarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_cTSexoSalvarActionPerformed
 
-    private void jFormattedTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField2ActionPerformed
+    private void cT_DAdmisSalvarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_DAdmisSalvarFunciActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField2ActionPerformed
+    }//GEN-LAST:event_cT_DAdmisSalvarFunciActionPerformed
 
-    private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
+    private void cT_MatEditarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_MatEditarFunciActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField21ActionPerformed
+    }//GEN-LAST:event_cT_MatEditarFunciActionPerformed
 
-    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
+    private void cT_NomeEditarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_NomeEditarFunciActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField22ActionPerformed
+    }//GEN-LAST:event_cT_NomeEditarFunciActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
+    private void botãoEditarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoEditarFunciActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
+        float salario = Float.parseFloat(cT_SalarioEditarFunci.getText());
+        
+        Funcionario c1 = new Funcionario(cT_MatEditarFunci.getText(), cT_NomeEditarFunci.getText(), cT_EndereçoEditarFunci.getText(), cT_DNascEditarFunci.getText(),
+            cT_DAdmisEditarFunci.getText(), cTSexoEditar.getText(), salario);
+        c2.salvar(c1);
+        JOptionPane.showMessageDialog(rootPane, "Salvo Com sucesso");
+        cT_MatSalvarFunci.setText("");
+        cT_NomeSalvarFunci.setText("");
+        cT_EndereçoSalvarFunci.setText("");
+        cT_DNascSalvarFunci.setText("");
+        cT_DAdmisSalvarFunci.setText("");
+        cTSexoSalvar.setText("");
+        cT_SalarioSalvarFunci.setText("");
+    }//GEN-LAST:event_botãoEditarFunciActionPerformed
 
-    private void jTextField24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField24ActionPerformed
+    private void botãoVoltarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoVoltarFunciActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField24ActionPerformed
+    }//GEN-LAST:event_botãoVoltarFunciActionPerformed
 
-    private void jTextField25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField25ActionPerformed
+    private void cTSexoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTSexoEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField25ActionPerformed
+    }//GEN-LAST:event_cTSexoEditarActionPerformed
 
-    private void jFormattedTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField7ActionPerformed
+    private void cT_SalarioEditarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_SalarioEditarFunciActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField7ActionPerformed
+    }//GEN-LAST:event_cT_SalarioEditarFunciActionPerformed
 
-    private void jFormattedTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField8ActionPerformed
+    private void cT_DNascEditarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_DNascEditarFunciActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField8ActionPerformed
+    }//GEN-LAST:event_cT_DNascEditarFunciActionPerformed
+
+    private void cT_DAdmisEditarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_DAdmisEditarFunciActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cT_DAdmisEditarFunciActionPerformed
+
+    private void botãoListarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoListarFunciActionPerformed
+
+        Set<Funcionario> result = c2.listarFuncionarios();
+        cTListarFunci.setText(result.toString());
+    }//GEN-LAST:event_botãoListarFunciActionPerformed
+
+    private void cTBuscarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTBuscarFunciActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cTBuscarFunciActionPerformed
+
+    private void botãoBuscarFunciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoBuscarFunciActionPerformed
+
+        Funcionario result = c2.buscarPorMatricula(cTBuscarFunci.getText());
+        cTBuscarFunci2.setText(result.toString());
+        cTBuscarFunci.setText("");
+    }//GEN-LAST:event_botãoBuscarFunciActionPerformed
 
     /**
      * @param args the command line arguments
@@ -660,47 +852,40 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
-    private javax.swing.JFormattedTextField jFormattedTextField3;
-    private javax.swing.JFormattedTextField jFormattedTextField4;
-    private javax.swing.JFormattedTextField jFormattedTextField5;
-    private javax.swing.JFormattedTextField jFormattedTextField6;
-    private javax.swing.JFormattedTextField jFormattedTextField7;
-    private javax.swing.JFormattedTextField jFormattedTextField8;
+    private javax.swing.JButton botãoBuscarFunci;
+    private javax.swing.JButton botãoDelFunci;
+    private javax.swing.JButton botãoEditarFunci;
+    private javax.swing.JButton botãoListarFunci;
+    private javax.swing.JButton botãoSalvarFunci;
+    private javax.swing.JButton botãoVoltarBuscarIngre;
+    private javax.swing.JButton botãoVoltarFunci;
+    private javax.swing.JButton botãoVoltarSalvarFunci;
+    private javax.swing.JTextField cTBuscarFunci;
+    private javax.swing.JTextArea cTBuscarFunci2;
+    private javax.swing.JTextArea cTListarFunci;
+    private javax.swing.JTextField cTSexoEditar;
+    private javax.swing.JTextField cTSexoSalvar;
+    private javax.swing.JFormattedTextField cT_DAdmisEditarFunci;
+    private javax.swing.JFormattedTextField cT_DAdmisSalvarFunci;
+    private javax.swing.JFormattedTextField cT_DNascEditarFunci;
+    private javax.swing.JFormattedTextField cT_DNascSalvarFunci;
+    private javax.swing.JTextField cT_EndereçoEditarFunci;
+    private javax.swing.JTextField cT_EndereçoSalvarFunci;
+    private javax.swing.JTextField cT_MatDelFunci;
+    private javax.swing.JTextField cT_MatEditarFunci;
+    private javax.swing.JTextField cT_MatSalvarFunci;
+    private javax.swing.JTextField cT_NomeEditarFunci;
+    private javax.swing.JTextField cT_NomeSalvarFunci;
+    private javax.swing.JTextField cT_SalarioEditarFunci;
+    private javax.swing.JTextField cT_SalarioSalvarFunci;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
@@ -711,6 +896,9 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -723,27 +911,8 @@ public class TelaOpçõesFuncionario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

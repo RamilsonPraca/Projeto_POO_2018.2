@@ -16,7 +16,7 @@ public interface FornecedorDao {
     public boolean salvar(FornecedorIngrediente fornecedor);
     public boolean Deletar(String CNPJ);
     public boolean editar (FornecedorIngrediente fornecedor);
-    public Set<FornecedorIngrediente> listarCervejas();
-    public FornecedorIngrediente buscarPorCodigo(String CNPJ);
+    public Set<FornecedorIngrediente> listarFornecedores();
+    public FornecedorIngrediente buscarPorCNPJ(String CNPJ);
 }
 

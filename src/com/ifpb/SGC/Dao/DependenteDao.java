@@ -16,6 +16,6 @@ public interface DependenteDao {
     public boolean salvar(Dependente dependente);
     public boolean Deletar(String matricula);
     public boolean editar (Dependente dependente);
-    public Set<Dependente> listarCervejas();
-    public Dependente buscarPorCodigo(String matricula);
+    public Set<Dependente> listarDependentes();
+    public Dependente buscarPorMatricula(String matricula);
 }

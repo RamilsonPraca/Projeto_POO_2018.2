@@ -52,7 +52,7 @@ public class IngredientesDaoImplem implements IngredienteDao{
     }
 
     @Override
-    public Set<Ingrediente> listarCervejas() {
+    public Set<Ingrediente> listarIngredientes() {
         return listaDeIngredientes;
     }
 

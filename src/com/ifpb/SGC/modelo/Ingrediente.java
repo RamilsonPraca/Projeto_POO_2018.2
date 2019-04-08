@@ -5,23 +5,20 @@
  */
 package com.ifpb.SGC.modelo;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
  *
  * @author ramil
  */
-public class Ingrediente {
+public class Ingrediente implements Serializable{
     private int codigo;
     private String nome;
-    private LocalDate dataChegada;
-    private LocalDate dataVencimento;
 
-    public Ingrediente(int codigo, String nome, LocalDate dataChegada, LocalDate dataVencimento) {
+    public Ingrediente(int codigo, String nome) {
         this.codigo = codigo;
         this.nome = nome;
-        this.dataChegada = dataChegada;
-        this.dataVencimento = dataVencimento;
     }
 
     public int getCodigo() {
@@ -40,21 +37,6 @@ public class Ingrediente {
         this.nome = nome;
     }
 
-    public LocalDate getDataChegada() {
-        return dataChegada;
-    }
-
-    public void setDataChegada(LocalDate dataChegada) {
-        this.dataChegada = dataChegada;
-    }
-
-    public LocalDate getDataVencimento() {
-        return dataVencimento;
-    }
-
-    public void setDataVencimento(LocalDate dataVencimento) {
-        this.dataVencimento = dataVencimento;
-    }
 
     @Override
     public int hashCode() {
@@ -83,7 +65,7 @@ public class Ingrediente {
 
     @Override
     public String toString() {
-        return "Ingrediente{" + "codigo=" + codigo + ", nome=" + nome + ", dataChegada=" + dataChegada + ", dataVencimento=" + dataVencimento + '}';
+        return "(codigo = " + codigo + " | nome = " + nome + " ) \n ";
     }
 
     

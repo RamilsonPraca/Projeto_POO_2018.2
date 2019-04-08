@@ -5,11 +5,17 @@
  */
 package com.ifpb.SGC.visão;
 
+import com.ifpb.SGC.Dao.IngredientesDaoImplem;
+import com.ifpb.SGC.modelo.Ingrediente;
+import java.util.Set;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ramil
  */
 public class TelaOpçõesIngrediente extends javax.swing.JFrame {
+    IngredientesDaoImplem c2 = new IngredientesDaoImplem();
 
     /**
      * Creates new form TelaOpçõesIngrediente
@@ -32,60 +38,71 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        cT_CodSalvarIngre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        cT_NomeSalvarIngre = new javax.swing.JTextField();
+        botãoSalvarIngre = new javax.swing.JButton();
+        botãoVoltarSalvarIngre = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        cT_CodDelIngre = new javax.swing.JTextField();
+        botãoDelIngre = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        cT_codEditarIngre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        cT_NomeEditarIngre = new javax.swing.JTextField();
+        botãoEditarIngre = new javax.swing.JButton();
+        botãoVoltarIngre = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        cTListarIngre = new javax.swing.JTextArea();
+        jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        cTBuscarIngre2 = new javax.swing.JTextArea();
+        botãoVoltarBuscarIngre = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        cTBuscarIngre = new javax.swing.JTextField();
+        botãoBuscarIngre = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Codigo:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        cT_CodSalvarIngre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                cT_CodSalvarIngreActionPerformed(evt);
             }
         });
 
         jLabel2.setText("Nome:");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        cT_NomeSalvarIngre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                cT_NomeSalvarIngreActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Salvar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        botãoSalvarIngre.setText("Salvar");
+        botãoSalvarIngre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                botãoSalvarIngreActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Voltar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        botãoVoltarSalvarIngre.setText("Voltar");
+        botãoVoltarSalvarIngre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                botãoVoltarSalvarIngreActionPerformed(evt);
             }
         });
 
@@ -105,11 +122,11 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jButton4)
+                        .addComponent(botãoVoltarSalvarIngre)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5))
-                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(botãoSalvarIngre))
+                    .addComponent(cT_NomeSalvarIngre, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cT_CodSalvarIngre, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -120,15 +137,15 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_CodSalvarIngre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_NomeSalvarIngre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(botãoVoltarSalvarIngre)
+                    .addComponent(botãoSalvarIngre))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
 
@@ -147,10 +164,10 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
 
         jLabel11.setText("Codigo:");
 
-        jButton2.setText("Deletar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botãoDelIngre.setText("Deletar");
+        botãoDelIngre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botãoDelIngreActionPerformed(evt);
             }
         });
 
@@ -165,13 +182,13 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(106, 106, 106)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2)
+                    .addComponent(botãoDelIngre)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(cT_CodDelIngre, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap(142, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -182,9 +199,9 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_CodDelIngre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(botãoDelIngre)
                 .addContainerGap(167, Short.MAX_VALUE))
         );
 
@@ -213,31 +230,31 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
 
         jLabel3.setText("Codigo:");
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        cT_codEditarIngre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                cT_codEditarIngreActionPerformed(evt);
             }
         });
 
         jLabel4.setText("Nome:");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        cT_NomeEditarIngre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                cT_NomeEditarIngreActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Salvar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        botãoEditarIngre.setText("Editar");
+        botãoEditarIngre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                botãoEditarIngreActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Voltar");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        botãoVoltarIngre.setText("Voltar");
+        botãoVoltarIngre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                botãoVoltarIngreActionPerformed(evt);
             }
         });
 
@@ -257,11 +274,11 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jButton7)
+                        .addComponent(botãoVoltarIngre)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton6))
-                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(botãoEditarIngre))
+                    .addComponent(cT_NomeEditarIngre, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cT_codEditarIngre, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
@@ -272,15 +289,15 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_codEditarIngre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cT_NomeEditarIngre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton6))
+                    .addComponent(botãoVoltarIngre)
+                    .addComponent(botãoEditarIngre))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
 
@@ -318,28 +335,113 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Editar", jPanel3);
 
+        cTListarIngre.setColumns(20);
+        cTListarIngre.setRows(5);
+        jScrollPane1.setViewportView(cTListarIngre);
+
+        jLabel5.setFont(new java.awt.Font("Bookman Old Style", 0, 20)); // NOI18N
+        jLabel5.setText("Listar Ingredientes");
+
+        jButton1.setText("Listar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 495, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jButton1)))
+                .addContainerGap(153, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 321, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel5)
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Listar", jPanel4);
+
+        jLabel6.setFont(new java.awt.Font("Bookman Old Style", 0, 20)); // NOI18N
+        jLabel6.setText("Buscar Ingredientes");
+
+        cTBuscarIngre2.setColumns(20);
+        cTBuscarIngre2.setRows(5);
+        jScrollPane2.setViewportView(cTBuscarIngre2);
+
+        botãoVoltarBuscarIngre.setText("Voltar");
+
+        jLabel7.setText("Codigo:");
+
+        cTBuscarIngre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cTBuscarIngreActionPerformed(evt);
+            }
+        });
+
+        botãoBuscarIngre.setText("Buscar");
+        botãoBuscarIngre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botãoBuscarIngreActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 495, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botãoVoltarBuscarIngre)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cTBuscarIngre, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(26, 26, 26)
+                        .addComponent(botãoBuscarIngre))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(106, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(143, 143, 143))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 321, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel6)
+                .addGap(45, 45, 45)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(cTBuscarIngre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botãoBuscarIngre))
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(botãoVoltarBuscarIngre)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Buscar", jPanel5);
@@ -358,42 +460,77 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void cT_CodSalvarIngreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_CodSalvarIngreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_cT_CodSalvarIngreActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void cT_NomeSalvarIngreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_NomeSalvarIngreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_cT_NomeSalvarIngreActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void botãoSalvarIngreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoSalvarIngreActionPerformed
+        int cod = Integer.parseInt(cT_CodSalvarIngre.getText());
+        
+        Ingrediente c1 = new Ingrediente(cod, cT_NomeSalvarIngre.getText());
+        c2.salvar(c1);
+        JOptionPane.showMessageDialog(rootPane, "Salvo Com sucesso");
+        cT_CodSalvarIngre.setText("");
+        cT_NomeSalvarIngre.setText("");
+    }//GEN-LAST:event_botãoSalvarIngreActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void botãoVoltarSalvarIngreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoVoltarSalvarIngreActionPerformed
         this.dispose();
         new TelaPrincipal().setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_botãoVoltarSalvarIngreActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void botãoDelIngreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoDelIngreActionPerformed
+        int cod = Integer.parseInt(cT_CodSalvarIngre.getText());
+        
+        Ingrediente c1 = new Ingrediente(cod, cT_NomeEditarIngre.getText());
+        c2.Deletar(cod);
+        JOptionPane.showMessageDialog(rootPane, "Deletado com Sucesso");
+        cT_CodDelIngre.setText("");
+    }//GEN-LAST:event_botãoDelIngreActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void cT_codEditarIngreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_codEditarIngreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_cT_codEditarIngreActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void cT_NomeEditarIngreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cT_NomeEditarIngreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_cT_NomeEditarIngreActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void botãoEditarIngreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoEditarIngreActionPerformed
+        int cod = Integer.parseInt(cT_codEditarIngre.getText());
+        
+        Ingrediente c1 = new Ingrediente(cod, cT_NomeEditarIngre.getText());
+        c2.salvar(c1);
+        JOptionPane.showMessageDialog(rootPane, "Salvo Com sucesso");
+        cT_codEditarIngre.setText("");
+        cT_NomeEditarIngre.setText("");
+    }//GEN-LAST:event_botãoEditarIngreActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void botãoVoltarIngreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoVoltarIngreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_botãoVoltarIngreActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        Set<Ingrediente> result = c2.listarIngredientes();
+        cTListarIngre.setText(result.toString());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cTBuscarIngreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTBuscarIngreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cTBuscarIngreActionPerformed
+
+    private void botãoBuscarIngreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoBuscarIngreActionPerformed
+        int cod = Integer.parseInt(cTBuscarIngre.getText());
+        
+        Ingrediente result = c2.buscarPorCodigo(cod);
+        cTBuscarIngre2.setText(result.toString());
+        cTBuscarIngre.setText("");
+    }//GEN-LAST:event_botãoBuscarIngreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -431,11 +568,22 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton botãoBuscarIngre;
+    private javax.swing.JButton botãoDelIngre;
+    private javax.swing.JButton botãoEditarIngre;
+    private javax.swing.JButton botãoSalvarIngre;
+    private javax.swing.JButton botãoVoltarBuscarIngre;
+    private javax.swing.JButton botãoVoltarIngre;
+    private javax.swing.JButton botãoVoltarSalvarIngre;
+    private javax.swing.JTextField cTBuscarIngre;
+    private javax.swing.JTextArea cTBuscarIngre2;
+    private javax.swing.JTextArea cTListarIngre;
+    private javax.swing.JTextField cT_CodDelIngre;
+    private javax.swing.JTextField cT_CodSalvarIngre;
+    private javax.swing.JTextField cT_NomeEditarIngre;
+    private javax.swing.JTextField cT_NomeSalvarIngre;
+    private javax.swing.JTextField cT_codEditarIngre;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -444,6 +592,9 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -453,11 +604,8 @@ public class TelaOpçõesIngrediente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

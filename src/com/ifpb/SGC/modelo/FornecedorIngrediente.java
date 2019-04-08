@@ -5,6 +5,7 @@
  */
 package com.ifpb.SGC.modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -13,17 +14,15 @@ import java.util.Objects;
  *
  * @author ramil
  */
-public class FornecedorIngrediente {
+public class FornecedorIngrediente implements Serializable{
     private String CNPJ;
     private String nome;
     private String contato;
-    private List<Ingrediente> IngredientesFornecidos;
 
     public FornecedorIngrediente(String CNPJ, String nome, String contato) {
         this.CNPJ = CNPJ;
         this.nome = nome;
-        this.contato = contato;
-        this.IngredientesFornecidos = new ArrayList<>();  
+        this.contato = contato;  
     }
 
     public String getCNPJ() {
@@ -50,13 +49,6 @@ public class FornecedorIngrediente {
         this.contato = contato;
     }
 
-    public List<Ingrediente> getIngredientesFornecidos() {
-        return IngredientesFornecidos;
-    }
-
-    public void setIngredientesFornecidos(List<Ingrediente> IngredientesFornecidos) {
-        this.IngredientesFornecidos = IngredientesFornecidos;
-    }
 
     @Override
     public int hashCode() {
@@ -85,7 +77,7 @@ public class FornecedorIngrediente {
 
     @Override
     public String toString() {
-        return "FornecedorIngrediente{" + "CNPJ=" + CNPJ + ", nome=" + nome + ", contato=" + contato + ", IngredientesFornecidos=" + IngredientesFornecidos + '}';
+        return "FornecedorIngrediente(" + "CNPJ = " + CNPJ + ", nome = " + nome + ", contato = " + contato  + ") \n";
     }
     
 }

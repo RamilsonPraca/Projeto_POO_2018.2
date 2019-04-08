@@ -16,6 +16,6 @@ public interface FuncionarioDao {
     public boolean salvar(Funcionario funcionario);
     public boolean Deletar(String matricula);
     public boolean editar (Funcionario funcionario);
-    public Set<Funcionario> listarCervejas();
-    public Funcionario buscarPorCodigo(String matricula);
+    public Set<Funcionario> listarFuncionarios();
+    public Funcionario buscarPorMatricula(String matricula);
 }

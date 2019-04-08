@@ -5,6 +5,7 @@
  */
 package com.ifpb.SGC.modelo;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -12,14 +13,14 @@ import java.util.Objects;
  *
  * @author ramil
  */
-public class Dependente {
+public class Dependente implements Serializable{
     private String matricula;
     private String nome;
     private String sexo;
-    private LocalDate dataNascimento;
+    private String dataNascimento;
     private String parentesco;
 
-    public Dependente(String matricula, String nome, String sexo, String parentesco) {
+    public Dependente(String matricula, String nome, String sexo, String dataNacimento, String parentesco) {
         this.matricula = matricula;
         this.nome = nome;
         this.sexo = sexo;
@@ -51,11 +52,11 @@ public class Dependente {
         this.sexo = sexo;
     }
 
-    public LocalDate getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -67,6 +68,9 @@ public class Dependente {
         this.parentesco = parentesco;
     }
 
+    
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -94,7 +98,7 @@ public class Dependente {
 
     @Override
     public String toString() {
-        return "Dependente{" + "matricula=" + matricula + ", nome=" + nome + ", sexo=" + sexo + ", dataNascimento=" + dataNascimento + ", parentesco=" + parentesco + '}';
+        return "Dependente(" + "matricula = " + matricula + ", nome = " + nome + ", sexo = " + sexo + ", dataNascimento = " + dataNascimento + ", parentesco=" + parentesco + ") \n";
     }
     
     
